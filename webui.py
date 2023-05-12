@@ -207,16 +207,12 @@ block_css = """.importantButton {
 
 webui_title = """
 # 🎉langchain-ChatGLM WebUI🎉
-👍 [https://github.com/imClumsyPanda/langchain-ChatGLM](https://github.com/imClumsyPanda/langchain-ChatGLM)
 """
 default_vs = vs_list[0] if len(vs_list) > 1 else "为空"
 init_message = f"""欢迎使用 langchain-ChatGLM Web UI！
 
-请在右侧切换模式，目前支持直接与 LLM 模型对话或基于本地知识库问答。
+当前知识库{default_vs}，如有需要可以在选择知识库名称后上传文件/文件夹至知识库。
 
-知识库问答模式，选择知识库名称后，即可开始问答，当前知识库{default_vs}，如有需要可以在选择知识库名称后上传文件/文件夹至知识库。
-
-知识库暂不支持文件删除，该功能将在后续版本中推出。
 """
 
 model_status = init_model()
@@ -236,7 +232,7 @@ with gr.Blocks(css=block_css) as demo:
                 query = gr.Textbox(show_label=False,
                                    placeholder="请输入提问内容，按回车进行提交").style(container=False)
             with gr.Column(scale=5):
-                mode = gr.Radio(["LLM 对话", "知识库问答"],
+                mode = gr.Radio(["知识库问答"],
                                 label="请选择使用模式",
                                 value="知识库问答", )
                 knowledge_set = gr.Accordion("知识库设定", visible=False)
