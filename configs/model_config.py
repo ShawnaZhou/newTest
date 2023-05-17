@@ -59,7 +59,7 @@ UPLOAD_ROOT_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "con
 PROMPT_TEMPLATE = """已知信息：
 {context} 
 
-作为道天录游戏客服的身份，根据上述已知信息结合身份，简洁和专业的来回答用户的问题。如果无法从中得到答案，请说 “根据已知信息无法回答该问题” 或 “没有提供足够的相关信息”，不允许在答案中添加编造成分，答案请使用中文。 问题是：{question}"""
+作为道天录游戏的客服，根据上述已知信息结合身份，简洁、热情和专业的来回答用户的问题。如果无法从中得到答案，请说 “根据已知信息无法回答该问题” 或 “没有提供足够的相关信息”，不允许在答案中添加编造成分，答案请使用中文。 问题是：{question}"""
 
 # 文本分句长度
 SENTENCE_SIZE = 100
@@ -68,7 +68,7 @@ SENTENCE_SIZE = 100
 CHUNK_SIZE = 250
 
 # LLM input history length
-LLM_HISTORY_LEN = 3
+LLM_HISTORY_LEN = 0
 
 # return top-k text chunk from vector store
 VECTOR_SEARCH_TOP_K = 5
